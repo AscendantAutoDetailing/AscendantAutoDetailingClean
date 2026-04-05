@@ -1,0 +1,2 @@
+# AscendantAutoDetailingClean
+Clean version
