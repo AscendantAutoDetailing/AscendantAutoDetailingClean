@@ -24,15 +24,17 @@ export default function Header({ lang }) {
       }}
     >
       {/* LOGO */}
-      <div style={{ flex: "1" }}>
-        <img
-          src="/images/AscendantAutoDetailing.png"
-          alt="Ascendant Auto Detailing"
-          style={{
-  height: "110px",
-  width: "auto",
-  objectFit: "contain"
-}}
+<div style={{ flex: "1" }}>
+  <img
+    src="/images/AscendantAutoDetailing.png"
+    alt="Ascendant Auto Detailing"
+    style={{
+      height: "110px",
+      width: "auto",
+      objectFit: "contain"
+    }}
+  />
+</div> 
 
       {/* NAV + LANG */}
       <div
