@@ -29,8 +29,8 @@ export default function Header({ lang }) {
     src="/images/AscendantAutoDetailing.png"
     alt="Ascendant Auto Detailing"
     style={{
-      height: "110px",
-      width: "auto",
+      height: "200px",
+      width: "160",
       objectFit: "contain"
     }}
   />
