@@ -23,19 +23,15 @@ export default function Header({ lang }) {
         alignItems: "center"
       }}
     >
-</div> 
-{/* LOGO */}
-<div style={{ flex: "1" }}>
-  <img
-    src="/images/AscendantAutoDetailing.png"
-    alt="Ascendant Auto Detailing"
-    style={{
-      height: "110px",
-      width: "auto",
-      objectFit: "contain"
-    }}
-  />
-</div>
+      {/* LOGO */}
+      <div style={{ flex: "1" }}>
+        <img
+          src="/images/AscendantAutoDetailing.png"
+          alt="logo"
+          style={{ height: "100px", width: "auto" }}
+        />
+      </div>
+
       {/* NAV + LANG */}
       <div
         style={{
@@ -47,7 +43,6 @@ export default function Header({ lang }) {
           marginLeft: "200px"
         }}
       >
-        {/* NAV */}
         {isFR ? (
           <>
             <Link href="/fr/services" style={linkStyle}>Services</Link>
@@ -66,39 +61,18 @@ export default function Header({ lang }) {
           </>
         )}
 
-        {/* DIVIDER BETWEEN NAV AND FR */}
-        <div
-          style={{
-  height: "110px",
-  width: "auto",
-  objectFit: "contain"
-}}
-        />
+        {/* DIVIDER */}
+        <div style={{ height: "20px", width: "1px", backgroundColor: "#555" }} />
 
         {/* LANG */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px"
-          }}
-        >
+        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
           <Link href="/fr" style={linkStyle}>FR</Link>
-
-          {/* SMALL DIVIDER */}
-          <div
-            style={{
-              height: "12px",
-              width: "1px",
-              backgroundColor: "#333"
-            }}
-          />
-
+          <div style={{ height: "12px", width: "1px", backgroundColor: "#333" }} />
           <Link href="/en" style={linkStyle}>EN</Link>
         </div>
       </div>
 
-      {/* RIGHT BALANCE */}
+      {/* RIGHT SPACE */}
       <div style={{ flex: "1" }} />
     </header>
   );
