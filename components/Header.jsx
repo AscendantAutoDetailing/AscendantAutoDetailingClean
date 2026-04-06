@@ -23,19 +23,19 @@ export default function Header({ lang }) {
         alignItems: "center"
       }}
     >
-      {/* LOGO */}
+</div> 
+{/* LOGO */}
 <div style={{ flex: "1" }}>
   <img
     src="/images/AscendantAutoDetailing.png"
     alt="Ascendant Auto Detailing"
     style={{
-      height: "210px",
-      width: "200",
+      height: "110px",
+      width: "auto",
       objectFit: "contain"
     }}
   />
-</div> 
-
+</div>
       {/* NAV + LANG */}
       <div
         style={{
