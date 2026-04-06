@@ -6,36 +6,35 @@ export default function Header({ lang }) {
   const linkStyle = {
     color: "white",
     textDecoration: "none",
-    fontSize: "14px",
+    fontSize: "15px",
     letterSpacing: "2px",
     textTransform: "uppercase",
-    fontWeight: "500"
+    fontWeight: "500",
+    fontFamily: "Montserrat, sans-serif"
   };
 
   return (
     <header style={{
       backgroundColor: "#000",
-      padding: "28px 60px",
+      padding: "30px 60px",
       display: "flex",
       alignItems: "center"
     }}>
 
       {/* LOGO */}
       <div style={{ flex: "1" }}>
-        <img
-          src="/logo.png"
-          alt="logo"
-          style={{ height: "70px" }}
-        />
+        <img src="/logo.png" style={{ height: "70px" }} />
       </div>
 
-      {/* NAV CENTER */}
-      <nav style={{
+      {/* NAV */}
+      <div style={{
         display: "flex",
-        gap: "45px",
-        justifyContent: "center",
-        flex: "2"
+        alignItems: "center",
+        gap: "35px",
+        flex: "2",
+        justifyContent: "center"
       }}>
+
         {isFR ? (
           <>
             <Link href="/fr/services" style={linkStyle}>Services</Link>
@@ -53,37 +52,37 @@ export default function Header({ lang }) {
             <Link href="/en/about" style={linkStyle}>About Us</Link>
           </>
         )}
-      </nav>
 
-      {/* RIGHT SIDE (LANG) */}
-      <div style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "12px",
-        flex: "1",
-        justifyContent: "flex-end"
-      }}>
-
-        {/* SEPARATOR AFTER NAV */}
+        {/* LINE AFTER NAV */}
         <div style={{
-          height: "18px",
+          height: "20px",
           width: "1px",
-          backgroundColor: "#444",
+          backgroundColor: "#555",
+          marginLeft: "10px",
           marginRight: "10px"
         }} />
 
-        <Link href="/fr" style={linkStyle}>FR</Link>
-
-        {/* SUBTLE SEPARATOR */}
+        {/* LANG */}
         <div style={{
-          height: "12px",
-          width: "1px",
-          backgroundColor: "#333"
-        }} />
+          display: "flex",
+          alignItems: "center",
+          gap: "10px"
+        }}>
+          <Link href="/fr" style={linkStyle}>FR</Link>
 
-        <Link href="/en" style={linkStyle}>EN</Link>
+          <div style={{
+            height: "12px",
+            width: "1px",
+            backgroundColor: "#333"
+          }} />
+
+          <Link href="/en" style={linkStyle}>EN</Link>
+        </div>
 
       </div>
+
+      {/* RIGHT EMPTY (for balance) */}
+      <div style={{ flex: "1" }} />
 
     </header>
   );
