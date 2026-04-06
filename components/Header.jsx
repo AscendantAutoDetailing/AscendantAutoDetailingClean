@@ -65,10 +65,10 @@ export default function Header({ lang }) {
         {/* DIVIDER BETWEEN NAV AND FR */}
         <div
           style={{
-            height: "20px",
-            width: "1px",
-            backgroundColor: "#555"
-          }}
+  height: "110px",
+  width: "auto",
+  objectFit: "contain"
+}}
         />
 
         {/* LANG */}
