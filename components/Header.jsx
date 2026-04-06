@@ -15,28 +15,34 @@ export default function Header({ lang }) {
   };
 
   return (
-    <header style={{
-      backgroundColor: "#000",
-      padding: "30px 60px",
-      display: "flex",
-      alignItems: "center"
-    }}>
-
+    <header
+      style={{
+        backgroundColor: "#000",
+        padding: "30px 60px",
+        display: "flex",
+        alignItems: "center"
+      }}
+    >
       {/* LOGO */}
       <div style={{ flex: "1" }}>
-        <<img src="/images/AscendantAutoDetailing.png" style={{ height: "70px" }} />
+        <img
+          src="/images/AscendantAutoDetailing.png"
+          alt="Ascendant Auto Detailing"
+          style={{ height: "70px" }}
+        />
       </div>
 
       {/* NAV + LANG */}
-      <div style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "40px",
-        flex: "2",
-        justifyContent: "center",
-        marginLeft: "200px"
-      }}>
-
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "40px",
+          flex: "2",
+          justifyContent: "center",
+          marginLeft: "200px"
+        }}
+      >
         {/* NAV */}
         {isFR ? (
           <>
@@ -56,35 +62,40 @@ export default function Header({ lang }) {
           </>
         )}
 
-        {/* DIVIDER */}
-        <div style={{
-          height: "20px",
-          width: "1px",
-          backgroundColor: "#555"
-        }} />
+        {/* DIVIDER BETWEEN NAV AND FR */}
+        <div
+          style={{
+            height: "20px",
+            width: "1px",
+            backgroundColor: "#555"
+          }}
+        />
 
         {/* LANG */}
-        <div style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "10px"
-        }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px"
+          }}
+        >
           <Link href="/fr" style={linkStyle}>FR</Link>
 
-          <div style={{
-            height: "12px",
-            width: "1px",
-            backgroundColor: "#333"
-          }} />
+          {/* SMALL DIVIDER */}
+          <div
+            style={{
+              height: "12px",
+              width: "1px",
+              backgroundColor: "#333"
+            }}
+          />
 
           <Link href="/en" style={linkStyle}>EN</Link>
         </div>
-
       </div>
 
-      {/* RIGHT SPACE */}
+      {/* RIGHT BALANCE */}
       <div style={{ flex: "1" }} />
-
     </header>
   );
 }
