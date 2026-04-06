@@ -10,7 +10,8 @@ export default function Header({ lang }) {
     letterSpacing: "2px",
     textTransform: "uppercase",
     fontWeight: "500",
-    fontFamily: "Montserrat, sans-serif"
+    fontFamily: "Montserrat, sans-serif",
+    whiteSpace: "nowrap" // ✅ FIXES "À propos" breaking
   };
 
   return (
@@ -30,16 +31,17 @@ export default function Header({ lang }) {
         />
       </div>
 
-      {/* NAV + LANG (MORE RIGHT) */}
+      {/* NAV + LANG */}
       <div style={{
         display: "flex",
         alignItems: "center",
-        gap: "35px",
+        gap: "40px",
         flex: "2",
         justifyContent: "center",
-        marginLeft: "140px"
+        marginLeft: "200px" // ✅ STRONG RIGHT SHIFT (≈ 2–3 cm)
       }}>
 
+        {/* NAV */}
         {isFR ? (
           <>
             <Link href="/fr/services" style={linkStyle}>Services</Link>
@@ -62,9 +64,7 @@ export default function Header({ lang }) {
         <div style={{
           height: "20px",
           width: "1px",
-          backgroundColor: "#555",
-          marginLeft: "10px",
-          marginRight: "10px"
+          backgroundColor: "#555"
         }} />
 
         {/* LANG */}
@@ -86,7 +86,7 @@ export default function Header({ lang }) {
 
       </div>
 
-      {/* RIGHT BUFFER */}
+      {/* RIGHT SPACE */}
       <div style={{ flex: "1" }} />
 
     </header>
