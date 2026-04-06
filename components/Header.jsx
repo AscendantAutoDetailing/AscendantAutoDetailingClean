@@ -15,29 +15,26 @@ export default function Header({ lang }) {
   return (
     <header style={{
       backgroundColor: "#000",
-      padding: "30px 80px",
+      padding: "28px 60px",
       display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between"
+      alignItems: "center"
     }}>
 
       {/* LOGO */}
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ flex: "1" }}>
         <img
           src="/logo.png"
-          alt="Ascendant Auto Detailing"
-          style={{
-            height: "75px",
-            objectFit: "contain"
-          }}
+          alt="logo"
+          style={{ height: "70px" }}
         />
       </div>
 
       {/* NAV CENTER */}
       <nav style={{
         display: "flex",
-        gap: "50px",
-        alignItems: "center"
+        gap: "45px",
+        justifyContent: "center",
+        flex: "2"
       }}>
         {isFR ? (
           <>
@@ -58,15 +55,34 @@ export default function Header({ lang }) {
         )}
       </nav>
 
-      {/* LANGUAGE SWITCH */}
+      {/* RIGHT SIDE (LANG) */}
       <div style={{
         display: "flex",
         alignItems: "center",
-        gap: "10px"
+        gap: "12px",
+        flex: "1",
+        justifyContent: "flex-end"
       }}>
+
+        {/* SEPARATOR AFTER NAV */}
+        <div style={{
+          height: "18px",
+          width: "1px",
+          backgroundColor: "#444",
+          marginRight: "10px"
+        }} />
+
         <Link href="/fr" style={linkStyle}>FR</Link>
-        <span style={{ color: "#666" }}>|</span>
+
+        {/* SUBTLE SEPARATOR */}
+        <div style={{
+          height: "12px",
+          width: "1px",
+          backgroundColor: "#333"
+        }} />
+
         <Link href="/en" style={linkStyle}>EN</Link>
+
       </div>
 
     </header>
