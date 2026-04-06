@@ -11,7 +11,7 @@ export default function Header({ lang }) {
     textTransform: "uppercase",
     fontWeight: "500",
     fontFamily: "Montserrat, sans-serif",
-    whiteSpace: "nowrap" // ✅ FIXES "À propos" breaking
+    whiteSpace: "nowrap"
   };
 
   return (
@@ -25,7 +25,7 @@ export default function Header({ lang }) {
       {/* LOGO */}
       <div style={{ flex: "1" }}>
         <img
-          src="/logo.png"
+          src="/AscendantAutoDetailing.png"
           alt="logo"
           style={{ height: "70px" }}
         />
@@ -38,7 +38,7 @@ export default function Header({ lang }) {
         gap: "40px",
         flex: "2",
         justifyContent: "center",
-        marginLeft: "200px" // ✅ STRONG RIGHT SHIFT (≈ 2–3 cm)
+        marginLeft: "200px"
       }}>
 
         {/* NAV */}
