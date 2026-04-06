@@ -21,7 +21,7 @@ export default function Header({ lang }) {
       alignItems: "center"
     }}>
 
-      {/* LOGO (LEFT) */}
+      {/* LOGO */}
       <div style={{ flex: "1" }}>
         <img
           src="/logo.png"
@@ -30,17 +30,16 @@ export default function Header({ lang }) {
         />
       </div>
 
-      {/* NAV + LANG (SHIFTED RIGHT) */}
+      {/* NAV + LANG (MORE RIGHT) */}
       <div style={{
         display: "flex",
         alignItems: "center",
         gap: "35px",
         flex: "2",
         justifyContent: "center",
-        marginLeft: "80px"
+        marginLeft: "140px"
       }}>
 
-        {/* NAV */}
         {isFR ? (
           <>
             <Link href="/fr/services" style={linkStyle}>Services</Link>
@@ -59,7 +58,7 @@ export default function Header({ lang }) {
           </>
         )}
 
-        {/* DIVIDER AFTER NAV */}
+        {/* DIVIDER */}
         <div style={{
           height: "20px",
           width: "1px",
@@ -76,7 +75,6 @@ export default function Header({ lang }) {
         }}>
           <Link href="/fr" style={linkStyle}>FR</Link>
 
-          {/* SUBTLE DIVIDER */}
           <div style={{
             height: "12px",
             width: "1px",
@@ -88,7 +86,7 @@ export default function Header({ lang }) {
 
       </div>
 
-      {/* RIGHT EMPTY (BALANCE) */}
+      {/* RIGHT BUFFER */}
       <div style={{ flex: "1" }} />
 
     </header>
