@@ -28,9 +28,11 @@ export default function Header({ lang }) {
         <img
           src="/images/AscendantAutoDetailing.png"
           alt="Ascendant Auto Detailing"
-          style={{ height: "70px" }}
-        />
-      </div>
+          style={{
+  height: "110px",
+  width: "auto",
+  objectFit: "contain"
+}}
 
       {/* NAV + LANG */}
       <div
