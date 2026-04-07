@@ -1,5 +1,3 @@
-import { redirect } from "next/navigation";
-
 export default function Page() {
-  redirect("/en");
+  return <h1>FR PAGE WORKS ✅</h1>;
 }
