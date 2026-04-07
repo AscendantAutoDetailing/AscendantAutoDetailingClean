@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div>
+    <div style={{ background: "#0a0a0a", color: "#fff" }}>
 
       {/* HERO */}
       <section style={{
@@ -12,7 +12,7 @@ export default function Home() {
         overflow: "hidden"
       }}>
 
-        {/* BACKGROUND IMAGE */}
+        {/* IMAGE */}
         <img
           src="/hero.jpg"
           alt="Luxury Car"
@@ -23,26 +23,26 @@ export default function Home() {
             objectFit: "cover",
             top: 0,
             left: 0,
-            filter: "brightness(0.5)"
+            filter: "brightness(0.45)"
           }}
         />
 
-        {/* CONTENT */}
+        {/* DARK OVERLAY (makes text readable) */}
         <div style={{
-          position: "relative",
-          maxWidth: "700px",
-          color: "#fff"
-        }}>
-          <p style={{
-            letterSpacing: "3px",
-            fontSize: "12px",
-            opacity: 0.7
-          }}>
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          background: "linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2))"
+        }} />
+
+        {/* CONTENT */}
+        <div style={{ position: "relative", maxWidth: "700px" }}>
+          <p style={{ color: "#c9a84f", letterSpacing: "2px", fontSize: "12px" }}>
             MOBILE AUTO DETAILING IN MONTREAL
           </p>
 
           <h1 style={{
-            fontSize: "56px",
+            fontSize: "60px",
             fontWeight: "700",
             lineHeight: "1.1",
             margin: "20px 0"
@@ -50,29 +50,15 @@ export default function Home() {
             Professional detailing for all types of vehicles.
           </h1>
 
-          <p style={{
-            opacity: 0.85,
-            lineHeight: "1.6",
-            maxWidth: "600px"
-          }}>
-            Ascendant Auto Detailing brings professional mobile detailing directly to you.
-            Whether you drive a daily commuter, a family SUV, or a high-end vehicle,
-            we provide the same level of care and attention to every car.
+          <p style={{ opacity: 0.85, lineHeight: "1.7" }}>
+            Ascendant Auto Detailing delivers premium mobile car detailing across Montreal,
+            including the South Shore and North Shore.
           </p>
 
           {/* BUTTONS */}
-          <div style={{
-            marginTop: "30px",
-            display: "flex",
-            gap: "15px"
-          }}>
-            <a href="/en/pricing" style={primaryBtn}>
-              View Pricing
-            </a>
-
-            <a href="/en/booking" style={secondaryBtn}>
-              Book Appointment
-            </a>
+          <div style={{ marginTop: "30px", display: "flex", gap: "15px" }}>
+            <a href="/en/pricing" style={goldBtn}>View Prices</a>
+            <a href="/en/booking" style={outlineBtn}>Book Now</a>
           </div>
         </div>
 
@@ -82,20 +68,19 @@ export default function Home() {
   );
 }
 
-const primaryBtn = {
-  background: "#111",
-  color: "#fff",
-  padding: "14px 24px",
-  borderRadius: "8px",
+const goldBtn = {
+  background: "#c9a84f",
+  color: "#000",
+  padding: "14px 26px",
+  borderRadius: "6px",
   textDecoration: "none",
-  fontWeight: "500"
+  fontWeight: "600"
 };
 
-const secondaryBtn = {
-  background: "#fff",
-  color: "#111",
-  padding: "14px 24px",
-  borderRadius: "8px",
-  textDecoration: "none",
-  fontWeight: "500"
+const outlineBtn = {
+  border: "1px solid #c9a84f",
+  color: "#fff",
+  padding: "14px 26px",
+  borderRadius: "6px",
+  textDecoration: "none"
 };
