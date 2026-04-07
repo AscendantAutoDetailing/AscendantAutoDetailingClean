@@ -1,79 +1,50 @@
-import Link from "next/link";
+"use client";
 
-export default function Header({ lang }) {
-  const isFR = lang === "fr";
-
-  const linkStyle = {
-    color: "white",
-    textDecoration: "none",
-    fontSize: "15px",
-    letterSpacing: "2px",
-    textTransform: "uppercase",
-    fontWeight: "500",
-    fontFamily: "Montserrat, sans-serif",
-    whiteSpace: "nowrap"
-  };
-
+export default function Header() {
   return (
-    <header
-      style={{
-        backgroundColor: "#000",
-        padding: "30px 60px",
-        display: "flex",
-        alignItems: "center"
-      }}
-    >
+    <header style={{
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: "15px 50px",
+      background: "#000",
+      color: "#fff"
+    }}>
+
       {/* LOGO */}
-      <div style={{ flex: "1" }}>
+      <a href="/en">
         <img
-          src="/images/AscendantAutoDetailing.png"
-          alt="logo"
-          style={{ height: "100px", width: "auto" }}
+          src="/logo.png"
+          alt="Ascendant"
+          style={{ height: "60px", objectFit: "contain" }}
         />
-      </div>
+      </a>
 
-      {/* NAV + LANG */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "40px",
-          flex: "2",
-          justifyContent: "center",
-          marginLeft: "200px"
-        }}
-      >
-        {isFR ? (
-          <>
-            <Link href="/fr/services" style={linkStyle}>Services</Link>
-            <Link href="/fr/tarifs" style={linkStyle}>Tarifs</Link>
-            <Link href="/fr/reservation" style={linkStyle}>Réservation</Link>
-            <Link href="/fr/contact" style={linkStyle}>Contact</Link>
-            <Link href="/fr/a-propos" style={linkStyle}>À propos</Link>
-          </>
-        ) : (
-          <>
-            <Link href="/en/services" style={linkStyle}>Services</Link>
-            <Link href="/en/packages" style={linkStyle}>Packages</Link>
-            <Link href="/en/booking" style={linkStyle}>Book Now</Link>
-            <Link href="/en/contact" style={linkStyle}>Contact Us</Link>
-            <Link href="/en/about" style={linkStyle}>About Us</Link>
-          </>
-        )}
+      {/* NAV */}
+      <nav style={{
+        display: "flex",
+        gap: "30px",
+        alignItems: "center",
+        fontSize: "14px",
+        letterSpacing: "1px"
+      }}>
+        <a href="/en/services" style={navStyle}>SERVICES</a>
+        <a href="/en/pricing" style={navStyle}>PACKAGES</a>
+        <a href="/en/booking" style={navStyle}>BOOK NOW</a>
+        <a href="/en/contact" style={navStyle}>CONTACT US</a>
+        <a href="/en/about" style={navStyle}>ABOUT US</a>
 
-        {/* DIVIDER */}
-        <div style={{ height: "20px", width: "1px", backgroundColor: "#555" }} />
+        <span style={{ opacity: 0.4 }}>|</span>
 
-        {/* LANG */}
-        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-          <Link href="/fr" style={linkStyle}>FR</Link>
-          <div style={{ height: "12px", width: "1px", backgroundColor: "#333" }} />
-          <Link href="/en" style={linkStyle}>EN</Link>
-        </div>
-      </div>
+        <a href="/fr" style={navStyle}>FR</a>
+        <a href="/en" style={navStyle}>EN</a>
+      </nav>
 
-      {/* RIGHT SPACE */}
-      <div style={{ flex: "1" }} />
     </header>
   );
 }
+
+const navStyle = {
+  color: "#e5e5e5",
+  textDecoration: "none"
+};
