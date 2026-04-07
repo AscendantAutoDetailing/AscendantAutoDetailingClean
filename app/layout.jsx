@@ -8,39 +8,55 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0, fontFamily: "Arial, sans-serif" }}>
-        
+      <body style={{
+        margin: 0,
+        fontFamily: "Arial, sans-serif",
+        background: "#0a0a0a",
+        color: "#fff"
+      }}>
+
         {/* HEADER */}
         <header style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "20px 40px",
-          borderBottom: "1px solid #ddd"
+          padding: "20px 50px",
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
+          background: "#0a0a0a"
         }}>
-          
-          {/* LOGO / NAME */}
-          <Link href="/en" style={{ textDecoration: "none", color: "black" }}>
-            <strong style={{ fontSize: "20px" }}>
-              Ascendant Auto Detailing
-            </strong>
+
+          {/* LOGO TEXT */}
+          <Link href="/en" style={{
+            textDecoration: "none",
+            color: "#fff",
+            fontWeight: "600",
+            fontSize: "20px",
+            letterSpacing: "1px"
+          }}>
+            Ascendant Auto Detailing
           </Link>
 
-          {/* NAV */}
-          <nav style={{ display: "flex", gap: "20px" }}>
-            <Link href="/en">Home</Link>
-            <Link href="/en/services">Services</Link>
-            <Link href="/en/pricing">Pricing</Link>
-            <Link href="/en/booking">Book</Link>
-            <Link href="/en/contact">Contact</Link>
-            <span>|</span>
-            <Link href="/fr">FR</Link>
+          {/* NAVIGATION */}
+          <nav style={{
+            display: "flex",
+            gap: "28px",
+            alignItems: "center"
+          }}>
+            <Link href="/en" style={navStyle}>Home</Link>
+            <Link href="/en/services" style={navStyle}>Services</Link>
+            <Link href="/en/pricing" style={navStyle}>Pricing</Link>
+            <Link href="/en/booking" style={navStyle}>Book</Link>
+            <Link href="/en/contact" style={navStyle}>Contact</Link>
+
+            <span style={{ opacity: 0.3 }}>|</span>
+
+            <Link href="/fr" style={navStyle}>FR</Link>
           </nav>
 
         </header>
 
-        {/* PAGE */}
-        <main style={{ padding: "20px" }}>
+        {/* PAGE CONTENT */}
+        <main style={{ padding: "30px" }}>
           {children}
         </main>
 
@@ -48,3 +64,10 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+const navStyle = {
+  color: "#e5e5e5",
+  textDecoration: "none",
+  fontSize: "14px",
+  letterSpacing: "1px"
+};
