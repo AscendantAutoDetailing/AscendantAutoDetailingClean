@@ -1,3 +1,3 @@
-export default function FrLayout({ children }) {
+export default function EnLayout({ children }) {
   return <>{children}</>;
 }
