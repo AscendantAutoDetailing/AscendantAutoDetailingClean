@@ -1,5 +1,3 @@
-import Header from "../components/Header";
-
 export const metadata = {
   title: "Ascendant Auto Detailing",
   description: "Premium mobile car detailing",
