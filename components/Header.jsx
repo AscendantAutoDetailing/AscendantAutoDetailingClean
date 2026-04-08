@@ -1,50 +1,63 @@
 "use client";
 
-export default function Header() {
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+export default function Navbar() {
+  const pathname = usePathname();
+  const isEnglish = pathname.startsWith("/en");
+
   return (
-    <header style={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      padding: "15px 50px",
-      background: "#000",
-      color: "#fff"
-    }}>
+    <header className="w-full border-b border-white/10 bg-black/85 backdrop-blur-md">
+      <div className="mx-auto flex h-32 max-w-6xl items-center justify-between px-6">
 
-      {/* LOGO */}
-      <a href="/en">
-        <img
-          src="/logo.png"
-          alt="Ascendant"
-          style={{ height: "60px", objectFit: "contain" }}
-        />
-      </a>
+        <Link href={isEnglish ? "/en" : "/"} className="flex items-center">
+          <img
+            src="/logo.png"
+            alt="Ascendant Auto Detailing"
+            className="h-52 w-auto mt-4 md:h-60"
+          />
+        </Link>
 
-      {/* NAV */}
-      <nav style={{
-        display: "flex",
-        gap: "30px",
-        alignItems: "center",
-        fontSize: "14px",
-        letterSpacing: "1px"
-      }}>
-        <a href="/en/services" style={navStyle}>SERVICES</a>
-        <a href="/en/pricing" style={navStyle}>PACKAGES</a>
-        <a href="/en/booking" style={navStyle}>BOOK NOW</a>
-        <a href="/en/contact" style={navStyle}>CONTACT US</a>
-        <a href="/en/about" style={navStyle}>ABOUT US</a>
+        <div className="flex items-center gap-10">
 
-        <span style={{ opacity: 0.4 }}>|</span>
+          <nav className="hidden md:flex items-center gap-8 text-sm text-white/80 uppercase">
 
-        <a href="/fr" style={navStyle}>FR</a>
-        <a href="/en" style={navStyle}>EN</a>
-      </nav>
+            <Link href={isEnglish ? "/en/services" : "/services"} className="whitespace-nowrap hover:text-yellow-400">
+              Services
+            </Link>
 
+            <Link href={isEnglish ? "/en/pricing" : "/pricing"} className="whitespace-nowrap hover:text-yellow-400">
+              {isEnglish ? "Packages" : "Tarifs"}
+            </Link>
+
+            <Link href={isEnglish ? "/en/booking" : "/booking"} className="whitespace-nowrap hover:text-yellow-400">
+              {isEnglish ? "Book Now" : "Réservation"}
+            </Link>
+
+            <Link href={isEnglish ? "/en/contact" : "/contact"} className="whitespace-nowrap hover:text-yellow-400">
+              {isEnglish ? "Contact Us" : "Contactez-nous"}
+            </Link>
+
+            <Link href={isEnglish ? "/en/about" : "/about"} className="whitespace-nowrap hover:text-yellow-400">
+              {isEnglish ? "About Us" : "À propos"}
+            </Link>
+
+          </nav>
+
+          <div className="hidden md:block h-5 w-px bg-white/20" />
+
+          <Link href="/" className="text-sm font-semibold text-white hover:text-yellow-400">
+            FR
+          </Link>
+
+          <Link href="/en" className="text-sm font-semibold text-white hover:text-yellow-400">
+            EN
+          </Link>
+
+        </div>
+
+      </div>
     </header>
   );
 }
-
-const navStyle = {
-  color: "#e5e5e5",
-  textDecoration: "none"
-};
