@@ -1,5 +1,5 @@
 import "./globals.css";
-import Header from "../components/header"; // ✅ lowercase + relative path
+import Header from "../components/Header"; // ✅ EXACT MATCH
 
 export const metadata = {
   title: "Ascendant Auto Detailing",
