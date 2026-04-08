@@ -2,19 +2,42 @@
 
 export default function ContactPage() {
   return (
-    <section className="bg-black text-white">
+    <div style={{ backgroundColor: "#000", color: "#fff", fontFamily: "sans-serif" }}>
 
       {/* HERO */}
-      <div className="relative h-[60vh] min-h-[420px] w-full">
+      <div
+        style={{
+          height: "320px",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
         <img
           src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1600&q=80"
-          alt="Luxury car"
-          className="absolute inset-0 w-full h-full object-cover"
+          alt="Luxury Car"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
         />
-        <div className="absolute inset-0 bg-black/70 flex items-center justify-center text-center">
+
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "rgba(0,0,0,0.6)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
           <div>
-            <p className="text-xs tracking-[0.4em] text-gray-400">CONTACT</p>
-            <h1 className="mt-4 text-4xl md:text-5xl font-semibold">
+            <p style={{ fontSize: "12px", letterSpacing: "4px", color: "#aaa" }}>
+              CONTACT
+            </p>
+            <h1 style={{ fontSize: "36px", marginTop: "10px" }}>
               Get In Touch
             </h1>
           </div>
@@ -22,121 +45,143 @@ export default function ContactPage() {
       </div>
 
       {/* CONTENT */}
-      <div className="max-w-5xl mx-auto px-6 py-24 space-y-20">
+      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "60px 20px" }}>
 
         {/* INTRO */}
-        <div className="text-center max-w-2xl mx-auto">
-          <p className="text-gray-400 leading-relaxed text-lg">
-            Whether you're ready to book a premium detailing service or simply have a question,
-            we offer multiple ways to connect with us. Reach out directly or through social platforms.
-          </p>
-        </div>
+        <p
+          style={{
+            textAlign: "center",
+            color: "#bbb",
+            lineHeight: "1.7",
+            marginBottom: "60px",
+          }}
+        >
+          Whether you're ready to book a premium detailing service or have a question,
+          our team is here to assist you. Reach out anytime and we’ll respond quickly.
+        </p>
 
         {/* CONTACT + SOCIAL */}
-        <div className="grid md:grid-cols-2 gap-10">
+        <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", marginBottom: "60px" }}>
 
           {/* CONTACT */}
-          <div className="rounded-2xl p-10 bg-gradient-to-b from-zinc-900 to-black border border-zinc-800">
-            <h2 className="text-xl font-semibold mb-6">Direct Contact</h2>
+          <div
+            style={{
+              flex: 1,
+              minWidth: "250px",
+              background: "#111",
+              padding: "25px",
+              borderRadius: "10px",
+              border: "1px solid #222",
+            }}
+          >
+            <h3 style={{ marginBottom: "20px" }}>Direct Contact</h3>
 
-            <div className="space-y-6 text-gray-300">
-              <div>
-                <p className="text-xs text-gray-500 uppercase">Phone</p>
-                <p className="text-lg mt-1">YOUR PHONE NUMBER</p>
-              </div>
+            <p style={{ color: "#888", fontSize: "12px" }}>PHONE</p>
+            <p style={{ marginBottom: "15px" }}>Your Phone Number</p>
 
-              <div>
-                <p className="text-xs text-gray-500 uppercase">Email</p>
-                <p className="text-lg mt-1">YOUR EMAIL</p>
-              </div>
-            </div>
+            <p style={{ color: "#888", fontSize: "12px" }}>EMAIL</p>
+            <p>Your Email</p>
           </div>
 
           {/* SOCIAL */}
-          <div className="rounded-2xl p-10 bg-gradient-to-b from-zinc-900 to-black border border-zinc-800">
-            <h2 className="text-xl font-semibold mb-6">Social Platforms</h2>
+          <div
+            style={{
+              flex: 1,
+              minWidth: "250px",
+              background: "#111",
+              padding: "25px",
+              borderRadius: "10px",
+              border: "1px solid #222",
+            }}
+          >
+            <h3 style={{ marginBottom: "20px" }}>Social Platforms</h3>
 
-            <div className="space-y-5 text-gray-300">
-
-              {["Facebook", "Instagram", "TikTok"].map((item, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="flex justify-between items-center border-b border-zinc-800 pb-3 hover:text-white transition"
-                >
-                  <span>{item}</span>
-                  <span className="text-gray-500">→</span>
-                </a>
-              ))}
-
-            </div>
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>TikTok</p>
           </div>
 
         </div>
 
         {/* FORM */}
-        <div className="max-w-2xl mx-auto bg-gradient-to-b from-zinc-900 to-black border border-zinc-800 rounded-2xl p-10">
-
-          <h2 className="text-2xl font-semibold mb-6 text-center">
+        <div
+          style={{
+            background: "#111",
+            padding: "30px",
+            borderRadius: "10px",
+            border: "1px solid #222",
+            marginBottom: "60px",
+          }}
+        >
+          <h3 style={{ marginBottom: "20px", textAlign: "center" }}>
             Request a Service
-          </h2>
+          </h3>
 
-          <form className="space-y-5">
+          <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
 
             <input
-              type="text"
               placeholder="Full Name"
-              className="w-full bg-black border border-zinc-700 rounded-lg px-4 py-3 focus:border-white outline-none"
+              style={inputStyle}
             />
 
             <input
-              type="email"
+              placeholder="Phone Number"
+              style={inputStyle}
+            />
+
+            <input
               placeholder="Email Address"
-              className="w-full bg-black border border-zinc-700 rounded-lg px-4 py-3 focus:border-white outline-none"
+              style={inputStyle}
             />
 
             <textarea
-              rows="5"
-              placeholder="Tell us about your vehicle & needs..."
-              className="w-full bg-black border border-zinc-700 rounded-lg px-4 py-3 focus:border-white outline-none"
+              placeholder="Tell us about your vehicle and needs..."
+              rows="4"
+              style={inputStyle}
             />
 
             <button
-              type="submit"
-              className="w-full bg-white text-black py-3 rounded-lg font-medium hover:bg-gray-200 transition"
+              style={{
+                background: "#fff",
+                color: "#000",
+                padding: "12px",
+                borderRadius: "6px",
+                border: "none",
+                cursor: "pointer",
+              }}
             >
               Submit Request
             </button>
 
-          </form>
+          </div>
         </div>
 
         {/* MAP */}
-        <div className="space-y-6">
+        <div>
+          <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
+            We are serving Montreal, the South Shore, the North Shore
+          </h3>
 
-          <div className="text-center">
-            <p className="text-xs tracking-[0.3em] text-gray-500">
-              SERVICE AREA
-            </p>
-            <h2 className="text-3xl font-semibold mt-2">
-              Montreal & Surroundings
-            </h2>
-            <p className="text-gray-400 mt-2">
-              We proudly serve Montreal, the South Shore, and the North Shore.
-            </p>
-          </div>
-
-          <div className="rounded-2xl overflow-hidden border border-zinc-800">
+          <div style={{ borderRadius: "10px", overflow: "hidden" }}>
             <iframe
               src="https://maps.google.com/maps?q=Montreal,Longueuil,Laval&t=&z=10&ie=UTF8&iwloc=&output=embed"
-              className="w-full h-[420px]"
-              loading="lazy"
+              width="100%"
+              height="350"
+              style={{ border: 0 }}
             ></iframe>
           </div>
-
         </div>
 
       </div>
-    </section>
+    </div>
   );
 }
+
+const inputStyle = {
+  width: "100%",
+  padding: "12px",
+  background: "#000",
+  border: "1px solid #333",
+  borderRadius: "6px",
+  color: "#fff",
+};
