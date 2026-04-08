@@ -1,5 +1,5 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Header from "../components/header"; // ✅ lowercase + relative path
 
 export const metadata = {
   title: "Ascendant Auto Detailing",
@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-[#050505] text-white antialiased">
         
-        <Navbar />
+        <Header />
 
         {children}
 
