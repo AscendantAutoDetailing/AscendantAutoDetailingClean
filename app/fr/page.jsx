@@ -1,8 +1,17 @@
+import Header from "../components/Header";
 import Link from "next/link";
 
-export default function HomeFR() {
+export default function Home() {
   return (
-    <main style={{ fontFamily: "sans-serif", backgroundColor: "#0a0a0a", color: "white" }}>
+    <>
+      <Header />
+
+      <main className="pt-20">
+        {/* your content */}
+      </main>
+    </>
+  );
+}
       
       {/* HERO SECTION */}
       <section style={{
