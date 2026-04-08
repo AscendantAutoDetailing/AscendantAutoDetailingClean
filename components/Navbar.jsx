@@ -1,63 +1,38 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const pathname = usePathname();
-  const isEnglish = pathname.startsWith("/en");
-
   return (
-    <header className="w-full border-b border-white/10 bg-black/85 backdrop-blur-md">
-      <div className="mx-auto flex h-32 max-w-6xl items-center justify-between px-6">
-
-        <Link href={isEnglish ? "/en" : "/"} className="flex items-center">
-          <img
-            src="/logo.png"
-            alt="Ascendant Auto Detailing"
-            className="h-52 w-auto mt-4 md:h-60"
-          />
-        </Link>
-
-        <div className="flex items-center gap-10">
-
-          <nav className="hidden md:flex items-center gap-8 text-sm text-white/80 uppercase">
-
-            <Link href={isEnglish ? "/en/services" : "/services"} className="whitespace-nowrap hover:text-yellow-400">
-              Services
-            </Link>
-
-            <Link href={isEnglish ? "/en/pricing" : "/pricing"} className="whitespace-nowrap hover:text-yellow-400">
-              {isEnglish ? "Packages" : "Tarifs"}
-            </Link>
-
-            <Link href={isEnglish ? "/en/booking" : "/booking"} className="whitespace-nowrap hover:text-yellow-400">
-              {isEnglish ? "Book Now" : "Réservation"}
-            </Link>
-
-            <Link href={isEnglish ? "/en/contact" : "/contact"} className="whitespace-nowrap hover:text-yellow-400">
-              {isEnglish ? "Contact Us" : "Contactez-nous"}
-            </Link>
-
-            <Link href={isEnglish ? "/en/about" : "/about"} className="whitespace-nowrap hover:text-yellow-400">
-              {isEnglish ? "About Us" : "À propos"}
-            </Link>
-
-          </nav>
-
-          <div className="hidden md:block h-5 w-px bg-white/20" />
-
-          <Link href="/" className="text-sm font-semibold text-white hover:text-yellow-400">
-            FR
-          </Link>
-
-          <Link href="/en" className="text-sm font-semibold text-white hover:text-yellow-400">
-            EN
-          </Link>
-
+    <div style={{
+      position: "fixed",
+      top: 0,
+      width: "100%",
+      background: "#0a0a0a",
+      borderBottom: "1px solid #1f1f1f",
+      zIndex: 1000
+    }}>
+      <div style={{
+        maxWidth: "1200px",
+        margin: "auto",
+        padding: "20px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        color: "white"
+      }}>
+        <div style={{ fontWeight: "600" }}>
+          Ascendant Auto Detailing
         </div>
 
+        <div style={{ display: "flex", gap: "20px" }}>
+          <Link href="/fr">Accueil</Link>
+          <Link href="/fr/services">Services</Link>
+          <Link href="/fr/tarifs">Tarifs</Link>
+          <Link href="/fr/booking">Réserver</Link>
+          <Link href="/fr/contact">Contact</Link>
+        </div>
       </div>
-    </header>
+    </div>
   );
 }
