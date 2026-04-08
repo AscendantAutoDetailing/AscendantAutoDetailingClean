@@ -18,7 +18,7 @@ export default function Header() {
       ]
     : [
         { href: "/en/services", label: "Services" },
-        { href: "/en/pricing", label: "Packages" },
+        { href: "/en/packages", label: "Packages" },
         { href: "/en/booking", label: "Book Now" },
         { href: "/en/contact", label: "Contact Us" },
         { href: "/en/about", label: "About Us" },
