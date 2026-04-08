@@ -1,86 +1,180 @@
-export default function Home() {
+import Link from "next/link";
+
+export default function HomeEN() {
   return (
-    <div style={{ background: "#0a0a0a", color: "#fff" }}>
-
-      {/* HERO */}
+    <main style={{ fontFamily: "sans-serif", backgroundColor: "#0a0a0a", color: "white" }}>
+      
+      {/* HERO SECTION */}
       <section style={{
-        position: "relative",
-        height: "85vh",
-        display: "flex",
-        alignItems: "center",
-        padding: "0 60px",
-        overflow: "hidden"
+        backgroundImage: "url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        padding: "140px 20px",
+        position: "relative"
       }}>
-
-        {/* IMAGE */}
-        <img
-          src="/hero.jpg"
-          alt="Luxury Car"
-          style={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            top: 0,
-            left: 0,
-            filter: "brightness(0.45)"
-          }}
-        />
-
-        {/* DARK OVERLAY (makes text readable) */}
+        
+        {/* DARK + GRADIENT OVERLAY */}
         <div style={{
           position: "absolute",
-          width: "100%",
-          height: "100%",
-          background: "linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2))"
+          inset: 0,
+          background: "linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4))"
         }} />
 
-        {/* CONTENT */}
-        <div style={{ position: "relative", maxWidth: "700px" }}>
-          <p style={{ color: "#c9a84f", letterSpacing: "2px", fontSize: "12px" }}>
+        <div style={{
+          position: "relative",
+          padding: "60px",
+          maxWidth: "900px"
+        }}>
+          <p style={{
+            letterSpacing: "3px",
+            color: "#d4af37",
+            fontSize: "14px",
+            marginBottom: "10px"
+          }}>
             MOBILE AUTO DETAILING IN MONTREAL
           </p>
 
           <h1 style={{
-            fontSize: "60px",
-            fontWeight: "700",
+            fontSize: "56px",
+            margin: "20px 0",
             lineHeight: "1.1",
-            margin: "20px 0"
+            fontWeight: "600"
           }}>
             Professional detailing for all types of vehicles.
           </h1>
 
-          <p style={{ opacity: 0.85, lineHeight: "1.7" }}>
+          <p style={{
+            color: "#ccc",
+            marginBottom: "40px",
+            fontSize: "18px",
+            maxWidth: "600px",
+            lineHeight: "1.6"
+          }}>
             Ascendant Auto Detailing delivers premium mobile car detailing across Montreal,
-            including the South Shore and North Shore.
+            including the South Shore and North Shore. Whether you drive a daily commuter,
+            luxury vehicle, or high-performance car, we bring unmatched precision directly to you.
           </p>
 
-          {/* BUTTONS */}
-          <div style={{ marginTop: "30px", display: "flex", gap: "15px" }}>
-            <a href="/en/pricing" style={goldBtn}>View Prices</a>
-            <a href="/en/booking" style={outlineBtn}>Book Now</a>
+          <div style={{ display: "flex", gap: "20px" }}>
+            
+            <Link href="/en/packages">
+              <button style={{
+                background: "linear-gradient(135deg, #d4af37, #f5d97a)",
+                color: "black",
+                padding: "14px 26px",
+                border: "none",
+                borderRadius: "6px",
+                fontWeight: "600",
+                cursor: "pointer"
+              }}>
+                View Prices
+              </button>
+            </Link>
+
+            <Link href="/en/booking">
+              <button style={{
+                backgroundColor: "transparent",
+                color: "white",
+                padding: "14px 26px",
+                border: "1px solid #d4af37",
+                borderRadius: "6px",
+                fontWeight: "600",
+                cursor: "pointer"
+              }}>
+                Book Now
+              </button>
+            </Link>
+
           </div>
         </div>
-
       </section>
 
-    </div>
+      {/* ABOUT DETAILING */}
+      <section style={{
+        padding: "100px 20px",
+        maxWidth: "1000px",
+        margin: "auto"
+      }}>
+        <h2 style={{
+          fontSize: "36px",
+          marginBottom: "20px",
+          color: "#d4af37"
+        }}>
+          What is Professional Car Detailing?
+        </h2>
+
+        <div style={{
+          width: "60px",
+          height: "3px",
+          backgroundColor: "#d4af37",
+          marginBottom: "30px"
+        }} />
+
+        <p style={{ color: "#ccc", lineHeight: "1.9", fontSize: "17px" }}>
+          Car detailing is a meticulous cleaning, restoration, and finishing process that goes far beyond a regular car wash.
+          At Ascendant Auto Detailing, every surface is treated with precision, using high-end products and expert techniques.
+        </p>
+
+        <p style={{ color: "#ccc", marginTop: "20px", lineHeight: "1.9", fontSize: "17px" }}>
+          Our services include deep interior cleaning, stain extraction, leather conditioning,
+          exterior decontamination, polishing, and protective treatments designed to preserve your vehicle’s value.
+        </p>
+
+        <p style={{ color: "#ccc", marginTop: "20px", lineHeight: "1.9", fontSize: "17px" }}>
+          We proudly serve Montreal, the South Shore, and the North Shore, offering a fully mobile experience —
+          delivering luxury detailing directly to your doorstep.
+        </p>
+      </section>
+
+      {/* FEATURES */}
+      <section style={{
+        display: "flex",
+        gap: "30px",
+        padding: "60px 20px",
+        justifyContent: "center",
+        flexWrap: "wrap"
+      }}>
+        {[
+          {
+            title: "Mobile Service",
+            text: "We come directly to your home or workplace anywhere in Montreal."
+          },
+          {
+            title: "All Vehicle Types",
+            text: "From daily drivers to luxury and performance vehicles."
+          },
+          {
+            title: "Premium Quality",
+            text: "High-end products and meticulous attention to detail."
+          }
+        ].map((item, index) => (
+          <div key={index} style={{
+            background: "linear-gradient(145deg, #111, #0d0d0d)",
+            padding: "40px",
+            borderRadius: "12px",
+            maxWidth: "320px",
+            border: "1px solid #1f1f1f",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+            transition: "0.3s"
+          }}>
+            <h3 style={{
+              color: "#d4af37",
+              marginBottom: "10px",
+              fontSize: "20px"
+            }}>
+              {item.title}
+            </h3>
+
+            <p style={{
+              color: "#aaa",
+              lineHeight: "1.6"
+            }}>
+              {item.text}
+            </p>
+          </div>
+        ))}
+      </section>
+
+    </main>
   );
 }
-
-const goldBtn = {
-  background: "#c9a84f",
-  color: "#000",
-  padding: "14px 26px",
-  borderRadius: "6px",
-  textDecoration: "none",
-  fontWeight: "600"
-};
-
-const outlineBtn = {
-  border: "1px solid #c9a84f",
-  color: "#fff",
-  padding: "14px 26px",
-  borderRadius: "6px",
-  textDecoration: "none"
-};
