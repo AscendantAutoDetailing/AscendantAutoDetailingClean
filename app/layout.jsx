@@ -1,5 +1,5 @@
 import "./globals.css";
-import Header from "@/components/Header"; // or Navbar if that's your file
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Ascendant Auto Detailing",
@@ -11,10 +11,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-[#050505] text-white antialiased">
         
-        {/* ✅ THIS WAS MISSING */}
-        <Header />
+        <Navbar />
 
-        {/* ✅ YOUR PAGES */}
         {children}
 
       </body>
